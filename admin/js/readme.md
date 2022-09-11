@@ -1,4 +1,4 @@
-# Readme
+# Readme (Under construction)
 
 This package does not use jQuery, this is a choice made in the wish to make a slim codebase as possible.
 Instead it loads only the functionality it needs to run for the segments of code called from the dom markup.
