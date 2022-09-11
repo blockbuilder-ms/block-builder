@@ -1,0 +1,18 @@
+[
+  {
+    "key": "installed",
+    "value": true
+  },
+  {
+    "key": "show_header",
+    "value": true
+  },
+  {
+    "key": "show_footer",
+    "value": true
+  },
+  {
+    "key": "debug",
+    "value": false
+  }
+]

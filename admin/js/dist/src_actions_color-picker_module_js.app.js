@@ -1,0 +1,22 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(self["webpackChunkblock_builder_editor"] = self["webpackChunkblock_builder_editor"] || []).push([["src_actions_color-picker_module_js"],{
+
+/***/ "./src/actions/color-picker/module.js":
+/*!********************************************!*\
+  !*** ./src/actions/color-picker/module.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var colorjoe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! colorjoe */ \"./node_modules/colorjoe/dist/colorjoe.js\");\n/* harmony import */ var colorjoe__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(colorjoe__WEBPACK_IMPORTED_MODULE_0__);\n/**\r\n * Color picker using\r\n * https://github.com/bebraw/colorjoe\r\n */\r\n\r\n// Importing Color Joe\r\n\r\n\r\nclass ColorPicker {\r\n  constructor(container) {\r\n    const self = this;\r\n\r\n    self.container = container;\r\n    self.button = self.container.querySelector(\"[x-button]\");\r\n    self.innerContainer = self.container.querySelector(\"[x-container]\");\r\n    self.currentColor = self.container.querySelector(\".current-color\");\r\n\r\n    self.extas = {};\r\n    self.initialColor = self.currentColor.hasAttribute(\"x-color\")\r\n      ? self.currentColor.getAttribute(\"x-color\")\r\n      : \"#000000\";\r\n\r\n    if (!(colorjoe__WEBPACK_IMPORTED_MODULE_0___default().rgb)) {\r\n      // Joe failed to start.\r\n      console.error(\"ColorJoe was not able to load.\");\r\n      return;\r\n    }\r\n\r\n    const joe = colorjoe__WEBPACK_IMPORTED_MODULE_0___default().rgb(\r\n      self.innerContainer.id,\r\n      self.initialColor,\r\n      self.extras\r\n    );\r\n\r\n    if (!joe) {\r\n      // Joe failed to start.\r\n      console.error(\"ColorJoe was not able to load.\");\r\n      return;\r\n    }\r\n\r\n    self.instance = joe;\r\n    self.instance.hide();\r\n    self.open = false;\r\n\r\n    self.innerContainer.parentNode.classList.add(\"hidden\");\r\n\r\n    self.button.addEventListener(\"click\", (e) => {\r\n      self.onPress(e, self);\r\n    });\r\n\r\n    self.instance.on(\"change\", async function (e) {\r\n      let controller = await window\r\n        .getAppLoader()\r\n        .blockControl.get(\r\n          window.getAppLoader().editing,\r\n          window.getAppLoader().editingObject\r\n        );\r\n\r\n      let value = e.css();\r\n      let input = self.currentColor.querySelector(\"input\");\r\n\r\n      self.currentColor.setAttribute(\"style\", \"background:\" + value);\r\n      self.currentColor.setAttribute(\"x-color\", value);\r\n\r\n      input.value = value;\r\n\r\n      window.getAppLoader().event.emit(\"bb-builder-control-hidden-change\", {\r\n        node: input,\r\n        changeEvent: e,\r\n        controller: controller,\r\n      });\r\n    });\r\n  }\r\n\r\n  onPress(e, self) {\r\n    e.preventDefault();\r\n\r\n    if (self.open) {\r\n      self.button.innerHTML = \"Update\";\r\n      self.instance.hide();\r\n      self.innerContainer.parentNode.classList.add(\"hidden\");\r\n\r\n      self.open = false;\r\n    } else {\r\n      self.button.innerHTML = \"Close\";\r\n      self.instance.show();\r\n      self.innerContainer.parentNode.classList.remove(\"hidden\");\r\n      self.open = true;\r\n    }\r\n  }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ColorPicker);\r\n\n\n//# sourceURL=webpack://block-builder-editor/./src/actions/color-picker/module.js?");
+
+/***/ })
+
+}]);

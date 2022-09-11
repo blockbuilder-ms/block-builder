@@ -1,0 +1,51 @@
+{
+  "name": "Header Standard",
+  "version": "1.0.0",
+  "category": "Headers",
+  "template": {
+    "data-id": "header",
+    "class": "class-name-1",
+    "tag": "core:row",
+    "content": [
+      {
+        "tag": "core:column",
+        "column": 4,
+        "content": [
+          {
+            "data-id": "logo",
+            "class": "logo-image",
+            "tag": "core:image",
+            "attributes": {
+              "src": "#",
+              "alt": "alternative text for image"
+            }
+          }
+        ]
+      },
+      {
+        "tag": "core:column",
+        "column": 6,
+        "content": [
+          {
+            "tag": "core:navigation",
+            "attributes": {
+              "navigation_id": 1
+            }
+          }
+        ]
+      },
+      {
+        "tag": "core:column",
+        "column": 2,
+        "content": [
+          {
+            "tag": "core:navigation",
+            "attributes": {
+              "navigation_id": 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
